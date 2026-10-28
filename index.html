@@ -681,6 +681,56 @@ body.host .bot-btn.ghost { background: rgba(255, 255, 255, 0.1) !important; colo
 .bad-code { border: 0 !important; }
 .role-logo { line-height: 1.05 !important; margin-top: 0 !important; } .role-tag { margin-top: -4px; }
 
+/* ===== مقدمة الفقرة (الشاشة الكبيرة) ===== */
+.intro2 { place-self: center; width: min(62rem, 92vw); display: flex; flex-direction: column; gap: 1.2rem; animation: popIn .5s ease-out both; }
+.i2-top { display: flex; align-items: center; gap: 1rem; color: rgba(255,255,255,.85); font-weight: 700; font-size: 1.2rem; }
+.i2-dots { display: flex; gap: .45rem; margin-inline: auto; }
+.i2-dots i { width: .8rem; height: .8rem; border-radius: 50%; background: rgba(255,255,255,.2); }
+.i2-dots i.done { background: var(--mint); }
+.i2-dots i.now { background: var(--sun); box-shadow: 0 0 0 4px rgba(255,194,61,.3); }
+.i2-reg { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: .25rem .9rem; border-radius: 999px; }
+.i2-card { position: relative; overflow: hidden; padding: 2.4rem 3rem 2.6rem !important; display: grid; grid-template-columns: auto 1fr; grid-template-areas: "e t" "e d" "s s"; column-gap: 2rem; row-gap: .3rem; align-items: center; }
+.i2-e { grid-area: e; width: 9rem; height: 9rem; border-radius: 2.4rem; display: grid; place-items: center; font-size: 5rem; background: linear-gradient(135deg, #e3f7f2, #fff4d6); }
+.i2-card h2 { grid-area: t; margin: 0; font-size: 4.6rem; line-height: 1.05; color: var(--sea) !important; text-shadow: none !important; }
+.i2-desc { grid-area: d; margin: 0; font-size: 1.7rem; font-weight: 700; color: #0e9f88; }
+.i2-steps { grid-area: s; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.8rem; }
+.i2-step { display: flex; align-items: center; gap: .8rem; background: var(--paper-2); border-radius: 1.2rem; padding: .9rem 1.1rem; animation: fadeUp .4s ease-out both; }
+.i2-step span { font-size: 2rem; }
+.i2-step b { font-size: 1.3rem; color: var(--ink); }
+.i2-bar { position: absolute; left: 0; right: 0; bottom: 0; height: .45rem; background: var(--paper-2); }
+.i2-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--pin), var(--sun)); animation: i2bar 6s linear both; transform-origin: right; }
+@keyframes i2bar { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+
+/* ألوان الوصف بالبطاقات (مش كله أسود) */
+.where-card .cap, .numq .u, .photo .cap, .award .note, .howto .step span:last-child { color: #0e9f88 !important; }
+.truth-sub { color: var(--sun) !important; }
+.reveal-card .k { color: #0e9f88 !important; }
+.reveal-card .s { color: var(--ink-2) !important; }
+.qtitle { font-size: 2.6rem !important; }
+
+/* ===== الترتيب: بيتسع لعدد كبير ===== */
+.stand { width: min(72rem, 92vw); }
+.stand.two { width: min(110rem, 94vw); }
+.stand .row { height: calc(4.6rem * var(--rs, 1)); padding-block: 0 !important; }
+.stand.two .row { left: auto !important; right: 0 !important; width: calc(50% - .6rem); }
+.stand .row .rk { font-size: calc(2.2rem * var(--rs, 1)); }
+.stand .row .pin-av { font-size: calc(3rem * var(--rs, 1)); }
+.stand .row .nm { font-size: calc(1.7rem * var(--rs, 1)); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.stand .row .sc { font-size: calc(2.2rem * var(--rs, 1)); }
+.stand .row .cm { font-size: calc(1.05rem * var(--rs, 1)) !important; white-space: nowrap; }
+.stand.two .row .cm { display: none; }
+
+/* زر الخروج بالجوال */
+.exit-btn { position: fixed; z-index: 35; top: calc(env(safe-area-inset-top, 0px) + 6px); left: max(8px, env(safe-area-inset-left, 0px)); width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(255,255,255,.92); color: var(--ink); font-size: 18px; font-weight: 800; box-shadow: 0 2px 8px rgba(0,0,0,.25); display: grid; place-items: center; padding: 0; }
+.exit-sheet { position: fixed; inset: 0; z-index: 60; background: rgba(4,20,18,.6); display: grid; place-items: end center; padding: 16px max(16px, env(safe-area-inset-left, 0px)) calc(env(safe-area-inset-bottom, 0px) + 16px); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.exit-card { width: min(420px, 100%); background: #fff; color: var(--ink); border-radius: 22px; padding: 20px 18px 16px; display: flex; flex-direction: column; gap: 10px; text-align: center; animation: fadeUp .25s ease-out both; }
+.exit-card h3 { margin: 0; font-family: var(--display); font-size: 22px; }
+.exit-card p { margin: 0 0 6px; color: var(--ink-2); font-weight: 600; font-size: 15px; }
+.exit-card .btn { width: 100%; font-size: 20px; }
+.exit-card .stay { background: var(--paper-2) !important; color: var(--ink) !important; box-shadow: none !important; }
+body.phone .tb { padding-left: 52px !important; padding-right: 52px !important; }
+body.host .switch-role { font-size: 14px !important; padding: 8px 14px !important; opacity: 1 !important; }
+
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
 </style>
 
@@ -771,7 +821,7 @@ function genWhere(region, n) {
     if (region === 'world') return true;
     return r.includes(region);
   });
-  return shuffle(pool).slice(0, n).map((p) => ({ type: 'where', wiki: p.w, ar: p.ar, emoji: p.e, lat: p.lat, lng: p.lng, country: nameOf(p.c), flag: (byCca3[p.c] || {}).flag || '', lv: p.lv || 2, cc: (CMAP[p.c] || {}).cca2, cont: (CMAP[p.c] || {}).cont }));
+  return shuffle(pool).slice(0, n).map((p) => ({ type: 'where', wiki: p.w, ar: p.ar, emoji: p.e, lat: p.lat, lng: p.lng, country: nameOf(p.c), c3: p.c, flag: (byCca3[p.c] || {}).flag || '', lv: p.lv || 2, cc: (CMAP[p.c] || {}).cca2, cont: (CMAP[p.c] || {}).cont }));
 }
 
 function genFlag(region, n) {
@@ -793,16 +843,16 @@ function genNumber(region, n) {
   const pool = inRegion(region).filter((c) => c.pop >= 1);
   const auto = [];
   shuffle(pool).slice(0, n).forEach((c, i) => {
-    if (i % 2 === 0) auto.push({ q: `كم مليون نسمة عدد سكان ${c.name}؟`, a: c.pop, unit: 'مليون', e: c.flag, approx: true });
-    else if (c.area >= 10000) auto.push({ q: `كم ألف كيلومتر مربع مساحة ${c.name}؟`, a: Math.round(c.area / 1000), unit: 'ألف كم²', e: c.flag, approx: true });
-    else auto.push({ q: `كم مليون نسمة عدد سكان ${c.name}؟`, a: c.pop, unit: 'مليون', e: c.flag, approx: true });
+    if (i % 2 === 0) auto.push({ q: `كم مليون نسمة عدد سكان ${c.name}؟`, a: c.pop, unit: 'مليون', e: c.flag, approx: true, c3: c.cca3 });
+    else if (c.area >= 10000) auto.push({ q: `كم ألف كيلومتر مربع مساحة ${c.name}؟`, a: Math.round(c.area / 1000), unit: 'ألف كم²', e: c.flag, approx: true, c3: c.cca3 });
+    else auto.push({ q: `كم مليون نسمة عدد سكان ${c.name}؟`, a: c.pop, unit: 'مليون', e: c.flag, approx: true, c3: c.cca3 });
   });
   // تقريباً ثلثين جاهزة وثلث من البيانات
   const nCur = Math.min(curated.length, Math.ceil(n * 0.65));
   const list = shuffle([...curated.slice(0, nCur), ...auto.slice(0, n - nCur)]);
   return list.slice(0, n).map((q) => ({
     type: 'number', text: q.q, answer: q.a, unit: q.unit, emoji: q.e, year: !!q.year,
-    tol: q.tol != null ? q.tol : (q.year ? 2 : Math.max(q.a * 0.04, 0)), approx: !!q.approx,
+    tol: q.tol != null ? q.tol : (q.year ? 2 : Math.max(q.a * 0.04, 0)), approx: !!q.approx, c3: q.c3 || null,
   }));
 }
 
@@ -849,7 +899,7 @@ function genTruth(region, n) {
   // لكل دولة: المعلومات الجاهزة (إذا موجودة) + نسختين من البيانات بمعلومات مختلفة
   const pool = inRegion(region);
   const out = [];
-  const mk = (cc, st, curated) => ({ type: 'truth', cca2: cc.cca2, name: cc.name, flag: cc.flag, statements: st.map((x) => x.text), answer: st.findIndex((x) => x.ok), curated });
+  const mk = (cc, st, curated) => ({ type: 'truth', c3: cc.cca3, cca2: cc.cca2, name: cc.name, flag: cc.flag, statements: st.map((x) => x.text), answer: st.findIndex((x) => x.ok), curated });
   for (const c of pool) {
     const F = FACTS[c.cca3];
     if (F) out.push(mk(c, shuffle([{ text: F.t, ok: true }, { text: F.f[0], ok: false }, { text: F.f[1], ok: false }]), true));
@@ -870,11 +920,11 @@ function genTruth(region, n) {
 }
 
 const SEGMENTS = {
-  where:  { id: 'where', short: 'صورة ← حط الدبوس عالخريطة',  title: 'وين هاي؟',        emoji: '📍', time: 30, reveal: 11, rules: 'بتطلع صورة لمكان بالعالم — حط الدبوس على مكانه بجوالك. بالثانية 10 بنحكيلكم القارة، بالثانية 16 علم الدولة، وبالثانية 22 بتنرسم القارة عالخريطة. كل ما جاوبت أبكر وأقرب، نقاطك أكثر.', gen: genWhere },
-  flag:   { id: 'flag', short: 'العلم بيبيّن شوي شوي',   title: 'علم مقطّع',        emoji: '🏁', time: 20, reveal: 6,  rules: 'العلم بيبيّن قطعة قطعة — اعرفه بأسرع وقت. كل ما جاوبت أبكر، نقاطك أكثر.', gen: genFlag },
-  shape:  { id: 'shape', short: 'شكل الدولة بس، بلا اسم',  title: 'حدود بس',          emoji: '🔲', time: 20, reveal: 7,  rules: 'شكل الدولة بس، بلا اسم ولا خريطة — شو هاي الدولة؟', gen: genShape },
-  number: { id: 'number', short: 'خمّن الرقم — الأقرب بيربح', title: 'أقرب رقم',         emoji: '📊', time: 25, reveal: 9,  rules: 'سؤال جوابه رقم — اكتب تخمينك. الأقرب بياخد أكثر، واللي بيجيبها بالزبط إله بونص.', gen: genNumber },
-  truth:  { id: 'truth', short: '3 معلومات، وحدة بس صح',  title: 'حقيقة وكذبتين',   emoji: '🎭', time: 20, reveal: 7,  rules: '3 معلومات عن دولة — وحدة بس صح والثنتين كذب. لاقي الصح!', gen: genTruth },
+  where:  { id: 'where', short: 'صورة ← حط الدبوس', title: 'وين هاي؟', emoji: '📍', time: 30, reveal: 11, rules: 'شوفوا الصورة وحطّوا الدبوس على مكانها.', steps: [['🌍', 'القارة بالثانية 10'], ['🏳️', 'العلم بالثانية 16'], ['✏️', 'الخريطة بالثانية 22']], gen: genWhere },
+  flag:   { id: 'flag', short: 'العلم بيبيّن شوي شوي', title: 'علم مقطّع', emoji: '🏁', time: 20, reveal: 6, rules: 'العلم بيتكشف شوي شوي — اعرفوه بسرعة.', steps: [['🧩', 'بيتكشف قطعة قطعة'], ['👆', '4 خيارات بالجوال'], ['⚡', 'الأسرع إله أكثر']], gen: genFlag },
+  shape:  { id: 'shape', short: 'شكل الدولة بس', title: 'حدود بس', emoji: '🔲', time: 20, reveal: 7, rules: 'شكل دولة بلا اسم — شو هي؟', steps: [['🔄', 'الشكل بيلف ويعتدل'], ['👆', '4 خيارات بالجوال'], ['⚡', 'الأسرع إله أكثر']], gen: genShape },
+  number: { id: 'number', short: 'الأقرب بيربح', title: 'أقرب رقم', emoji: '📊', time: 25, reveal: 9, rules: 'سؤال جوابه رقم — الأقرب بيربح.', steps: [['🎚️', 'حرّك السلايدر'], ['🎯', 'الأقرب بيربح'], ['✨', 'بالزبط = بونص']], gen: genNumber },
+  truth:  { id: 'truth', short: 'وحدة بس صح', title: 'حقيقة وكذبتين', emoji: '🎭', time: 20, reveal: 7, rules: 'وحدة صح وثنتين كذب — لاقوا الصح.', steps: [['📜', '3 معلومات عن دولة'], ['✅', 'وحدة بس صح'], ['⚡', 'الأسرع إله أكثر']], gen: genTruth },
 };
 
 window.Q = { SEGMENTS, km };
@@ -1137,7 +1187,7 @@ D.qrSvg = (text) => { try {
   const connectedPlayers = () => [...G.players.values()].filter((p) => p.connected);
   const publicPlayer = (p) => ({ bot: !!p.bot, id: p.id, name: p.name, avatar: p.avatar, color: p.color, score: p.score, connected: p.connected, arrive: p.arrive });
   const seg = () => G.plan[G.segIdx];
-  const segMeta = (s) => { if (!s) return null; const m = SEGMENTS[s.id]; return { id: m.id, title: m.title, emoji: m.emoji, rules: m.rules, time: m.time, count: s.qs.length }; };
+  const segMeta = (s) => { if (!s) return null; const m = SEGMENTS[s.id]; return { id: m.id, title: m.title, emoji: m.emoji, rules: m.rules, steps: m.steps, time: m.time, count: s.qs.length }; };
   const qKey = () => `${G.segIdx}.${G.qIdx}`;
 
   function qPublic(q) {
@@ -1206,7 +1256,11 @@ D.qrSvg = (text) => { try {
   };
   function loadSeen() { try { return new Set(JSON.parse(localStorage.getItem('dabbous_seen') || '[]')); } catch (e) { return new Set(); } }
   function saveSeen(set) { try { localStorage.setItem('dabbous_seen', JSON.stringify([...set].slice(-3000))); } catch (e) { /* */ } }
-  function pickFresh(id, all, n, seen) {
+  // دولة وحدة ما تتكرر بأكثر من فقرة بنفس اللعبة
+  const countryOf = (q) => q.c3 || ((q.type === 'flag' || q.type === 'shape') ? q.answer : null);
+  function pickFresh(id, all, n, seen, used) {
+    used = used || new Set();
+    all = all.filter((q) => !countryOf(q) || !used.has(countryOf(q))).concat(all.filter((q) => countryOf(q) && used.has(countryOf(q))));
     let fresh = all.filter((q) => !seen.has(keyOf(q)));
     if (fresh.length < n) { all.forEach((q) => seen.delete(keyOf(q))); fresh = all.slice(); } // خلص البنك لهالمنطقة — نبلّش من جديد
     let out;
@@ -1218,16 +1272,17 @@ D.qrSvg = (text) => { try {
       out = out.slice(0, n).sort((a, b) => (a.lv || 2) - (b.lv || 2));
     } else {
       out = [];
-      for (const q of fresh) { if (out.length >= n) break; if (id === 'truth' && out.some((o) => o.name === q.name)) continue; out.push(q); }
+      for (const q of fresh) { if (out.length >= n) break; if (countryOf(q) && out.some((o) => countryOf(o) === countryOf(q))) continue; if (countryOf(q) && used.has(countryOf(q))) continue; out.push(q); }
       if (out.length < n) for (const q of fresh) { if (out.length >= n) break; if (!out.includes(q)) out.push(q); }
     }
-    out.forEach((q) => seen.add(keyOf(q)));
+    out.forEach((q) => { seen.add(keyOf(q)); if (countryOf(q)) used.add(countryOf(q)); });
     return out;
   }
   function startGame() {
     const { region, segments, perSeg } = G.settings;
     const seen = loadSeen();
-    G.plan = segments.map((id) => ({ id, qs: pickFresh(id, SEGMENTS[id].gen(region, Math.max(perSeg * 8, 40)), perSeg, seen) })).filter((s) => s.qs.length);
+    const used = new Set();
+    G.plan = segments.map((id) => ({ id, qs: pickFresh(id, SEGMENTS[id].gen(region, Math.max(perSeg * 8, 40)), perSeg, seen, used) })).filter((s) => s.qs.length);
     saveSeen(seen);
     if (!G.plan.length) return;
     for (const p of G.players.values()) p.score = 0;
@@ -1783,8 +1838,12 @@ window.startHost = function () {
   function vIntro() {
     D.sfx.stamp();
     const m = S.seg;
-    stage.innerHTML = `<div class="intro paper"><div class="stamp">${S.regions[S.settings.region].emoji} ${S.regions[S.settings.region].label}</div>
-      <div class="num">الفقرة ${S.segIdx + 1} من ${S.segTotal}</div><div class="e">${m.emoji}</div><h2>${m.title}</h2><p>${m.rules}</p></div>`;
+    const dots = Array.from({ length: S.segTotal }, (_, i) => `<i class="${i < S.segIdx ? 'done' : i === S.segIdx ? 'now' : ''}"></i>`).join('');
+    stage.innerHTML = `<div class="intro2">
+      <div class="i2-top"><span class="i2-num">الفقرة ${S.segIdx + 1} من ${S.segTotal}</span><span class="i2-dots">${dots}</span><span class="i2-reg">${S.regions[S.settings.region].emoji} ${S.regions[S.settings.region].label}</span></div>
+      <div class="i2-card paper"><div class="i2-e">${m.emoji}</div><h2>${m.title}</h2><p class="i2-desc">${m.rules}</p>
+        ${m.steps ? `<div class="i2-steps">${m.steps.map(([e, t], i) => `<div class="i2-step" style="animation-delay:${0.25 + i * 0.12}s"><span>${e}</span><b>${t}</b></div>`).join('')}</div>` : ''}
+        <div class="i2-bar"><i></i></div></div></div>`;
   }
 
   // ===== السؤال =====
@@ -2018,10 +2077,17 @@ window.startHost = function () {
     const list = S.players.slice().sort((a, b) => b.score - a.score);
     const prev = S.prevRanks || {};
     const el = document.createElement('div'); el.className = 'stand';
-    const ROW = 5.2; // rem
     const fs = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    el.innerHTML = `<h2>الترتيب لهلّأ ✈️</h2><div class="rows" style="height:${list.length * ROW}rem"></div>`;
+    // لما اللاعبين كثار: عمودين، وحجم الصف بيصغر عشان الكل يبين
+    const cols = list.length > 6 && window.innerWidth > 700 ? 2 : 1;
+    const perCol = Math.ceil(list.length / cols);
+    const avail = (window.innerHeight - 11 * fs) / fs;
+    const ROW = Math.max(3.2, Math.min(5.2, avail / perCol)); // rem
+    el.style.setProperty('--rs', (ROW / 5.2).toFixed(3));
+    if (cols === 2) el.classList.add('two');
+    el.innerHTML = `<h2>الترتيب لهلّأ ✈️</h2><div class="rows" style="height:${perCol * ROW}rem"></div>`;
     stage.appendChild(el);
+    const pos = (i) => { const c = Math.floor(i / perCol), r = i % perCol; return `translate(${cols === 2 ? -c * (el.querySelector('.rows').clientWidth / 2 + 0) : 0}px, ${r * ROW * fs}px)`; };
     const box = $('.rows', el);
     const prevOrder = list.slice().sort((a, b) => (prev[a.id] || 99) - (prev[b.id] || 99));
     list.forEach((p, i) => {
@@ -2029,10 +2095,9 @@ window.startHost = function () {
       const cm = (S.standComments || {})[p.id];
       r.innerHTML = `<span class="rk">${i + 1}</span>${pinAv(p, i === 0 ? 'happy' : '')}<span class="nm">${D.esc(p.name)}</span>${cm ? `<span class="cm">${cm}</span>` : ''}<span class="sc" data-v="${p.score}">0</span>`;
       const from = prevOrder.indexOf(p);
-      r.style.transform = `translateY(${from * ROW * fs}px)`;
-      if (i === 0) r.style.background = '#fff6dc';
+      r.style.transform = pos(from);
       box.appendChild(r);
-      later(() => { r.style.transform = `translateY(${i * ROW * fs}px)`; }, 700);
+      later(() => { r.style.transform = pos(i); }, 700);
     });
     // عدّ النقاط
     const scs = [...box.querySelectorAll('.sc')]; const t0 = performance.now();
@@ -2163,11 +2228,11 @@ window.startPhone = function () {
   }
 
   const HOWTO = {
-    where: [['📷', 'بتطلع صورة لمكان عالشاشة الكبيرة'], ['🗺️', 'قرّب الخريطة بجوالك وحط الدبوس، وبعدين «ثبّت»'], ['💡', 'بالثانية 10 القارة، بالثانية 16 العلم، وبالثانية 22 بتنرسم القارة عالخريطة'], ['⚡', 'الأقرب والأسرع بياخد نقاط أكثر']],
-    flag: [['🏁', 'العلم بيتكشف قطعة قطعة عالشاشة'], ['👆', 'اختار الدولة من 4 خيارات بجوالك'], ['⚡', 'كل ما جاوبت أبكر، نقاطك أكثر']],
-    shape: [['🔲', 'بيطلع شكل الدولة مقلوب وبيلف شوي شوي'], ['👆', 'اختار الدولة من 4 خيارات بجوالك'], ['⚡', 'كل ما استنيت بيسهل، بس نقاطك بتقل']],
-    number: [['❓', 'سؤال جوابه رقم'], ['🎚️', 'حرّك السلايدر لتخمينك، أو اكتب الرقم'], ['🎯', 'الأقرب بياخد أكثر، واللي بيجيبها بالزبط إله بونص']],
-    truth: [['🎭', '3 معلومات عن دولة'], ['✅', 'وحدة بس صح، والثنتين كذب'], ['👆', 'اختار الصح بأسرع وقت']],
+    where: [['📷', 'شوف الصورة عالشاشة'], ['📍', 'حط الدبوس وثبّته'], ['💡', 'تلميحات بالثانية 10 و16 و22']],
+    flag: [['🧩', 'العلم بيتكشف شوي شوي'], ['👆', 'اختار من 4'], ['⚡', 'الأسرع إله أكثر']],
+    shape: [['🔄', 'الشكل بيلف ويعتدل'], ['👆', 'اختار من 4'], ['⚡', 'الأسرع إله أكثر']],
+    number: [['🎚️', 'حرّك السلايدر'], ['🎯', 'الأقرب بيربح'], ['✨', 'بالزبط = بونص']],
+    truth: [['📜', '3 معلومات'], ['✅', 'وحدة بس صح'], ['⚡', 'الأسرع إله أكثر']],
   };
   function vIntro() {
     setBar(`جهّز حالك — ${V.seg.title} ${V.seg.emoji}`);
@@ -2590,19 +2655,33 @@ window.startPhone = function () {
       },
     };
     window.startPhone();
+    // زر خروج واضح (فوق عاليسار) — بيرجع لصفحة البداية
+    const exitBtn = document.createElement('button'); exitBtn.className = 'exit-btn'; exitBtn.setAttribute('aria-label', 'خروج'); exitBtn.textContent = '✕';
+    document.body.appendChild(exitBtn);
+    exitBtn.onclick = () => {
+      const sh = document.createElement('div'); sh.className = 'exit-sheet';
+      sh.innerHTML = `<div class="exit-card"><h3>بدك تطلع؟</h3><p>${meP.name ? 'رح تطلع من اللعبة وترجع لصفحة البداية.' : 'رح ترجع لصفحة البداية.'}</p><button class="btn" id="exYes">اه، اطلع</button><button class="btn stay" id="exNo">لا، كمّل</button></div>`;
+      document.body.appendChild(sh);
+      sh.querySelector('#exNo').onclick = () => sh.remove();
+      sh.addEventListener('click', (e) => { if (e.target === sh) sh.remove(); });
+      sh.querySelector('#exYes').onclick = () => {
+        try { room.presence({ role: null, pid: null, name: null, av: null, ans: null }); } catch (e) { /* */ }
+        store.set('dabbous_role', null); store.set('dabbous_joined_name', null);
+        setTimeout(() => location.reload(), 250);
+      };
+    };
     room.presence({ role: 'player', pid, name: meP.name, av: meP.av }).catch(() => {});
 
-    const segMeta = (id) => { const m = id && Q.SEGMENTS[id]; return m ? { id: m.id, title: m.title, emoji: m.emoji, rules: m.rules, count: HS && HS.qn } : null; };
+    const segMeta = (id) => { const m = id && Q.SEGMENTS[id]; return m ? { id: m.id, title: m.title, emoji: m.emoji, rules: m.rules, steps: m.steps, count: HS && HS.qn } : null; };
 
     function update() {
       const v = { t: HS ? HS.at + (Date.now() - hostSeenAt) : Date.now(), avatars: Engine.AVATARS };
-      if (!HS) { v.phase = meP.name ? 'nohost' : 'join'; v.takenAvatars = []; PhoneUI.render(v); $('#switchRole').hidden = false; return; }
+      if (!HS) { v.phase = meP.name ? 'nohost' : 'join'; v.takenAvatars = []; PhoneUI.render(v); return; }
       const pl = HS.pl.map((a) => ({ id: a[0], name: a[1], avatar: a[2], color: a[3], score: a[4] }));
       const me = pl.find((x) => x.id === pid);
       v.takenAvatars = pl.filter((x) => x.id !== pid).map((x) => x.avatar);
       v.inGame = HS.ph !== 'lobby';
-      if (!me) { v.phase = meP.name ? 'joining' : 'join'; v.myAv = meP.av; PhoneUI.render(v); $('#switchRole').hidden = false; return; }
-      $('#switchRole').hidden = HS.ph !== 'lobby';
+      if (!me) { v.phase = meP.name ? 'joining' : 'join'; v.myAv = meP.av; PhoneUI.render(v); return; }
       const ranked = pl.slice().sort((a, b) => b.score - a.score);
       Object.assign(v, {
         phase: HS.ph, me, region: HS.reg, seg: segMeta(HS.sid), qIdx: `${HS.si}.${HS.qi}`, qNum: HS.qi + 1, q: HS.q, endsAt: HS.end,
